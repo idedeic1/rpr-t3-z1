@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.tutorijal03;
 
 import java.util.HashMap;
 import java.util.Set;
-import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad;
+
 
 
 public class Imenik {
@@ -21,16 +21,20 @@ public class Imenik {
 
         return (String)kontakti.get(broj);
     }
-/*
+
     public String naSlovo(char s){}
     public Set<String> izGrada(Grad g){
         Set<String> temp;
+
         for(int i=0; i<kontakti.size(); i++){
-
+            if(kontakti.containsValue(g.toString()))
+                temp.add(kontakti.get(g.toString()));
         }
+        return temp;
     }
-    public Set<TelefonskiBroj> izGradaBrojevi(Grad g){
 
+    public Set<TelefonskiBroj> izGradaBrojevi(Grad g){
+        Set<TelefonskiBroj> temp;
     }
-*/
+
 }

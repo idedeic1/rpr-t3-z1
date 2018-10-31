@@ -1,7 +1,6 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
 enum Grad {
-
     SARAJEVO("033"),
     TUZLA("035"),
     ZENICA("032"),
@@ -22,8 +21,6 @@ enum Grad {
     public String toString() {
         return this.pozivni;
     }
-
-
 }
 
 public class FiksniBroj extends TelefonskiBroj {
