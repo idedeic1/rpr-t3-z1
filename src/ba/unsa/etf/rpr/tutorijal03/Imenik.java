@@ -7,9 +7,7 @@ import java.util.Iterator;
 
 public class Imenik {
     private HashMap<TelefonskiBroj, String> kontakti = new HashMap<>();
-    public void dajIme{
-        kontakti
-    }
+    public void dajIme(){ };
 
     public void dodaj(String ime, TelefonskiBroj broj){
         kontakti.put(broj,ime);
@@ -18,7 +16,7 @@ public class Imenik {
     public String dajBroj(String ime){
         Set set = kontakti.entrySet();
         Iterator iterator = set.iterator();
-        
+
         return kontakti.get(ime);
     }
 
@@ -27,26 +25,11 @@ public class Imenik {
         return (String)kontakti.get(broj);
     }
 
-    public String naSlovo(char s){
-        String tmp;
-        Iterator it = kontakti.iterator();
-        for(int i=0; i<kontakti.size(); i++){
-            if(kontakti.get(i).charAt(0) == s)
-                System.out.println(i, ".", kontakti. ));
-        }
-    }
-    public Set<String> izGrada(Grad g){
-        Set<String> temp;
+    public String naSlovo(char s){String tmp = "test"; return tmp;};
+    //public Set<String> izGrada(Grad g){};
 
-        for(int i=0; i<kontakti.size(); i++){
-            if(kontakti.containsValue(g.toString()))
-                temp.add(kontakti.get(g.toString()));
-        }
+    /*public Set<TelefonskiBroj> izGradaBrojevi(Grad g){
+        Set<TelefonskiBroj> temp = new Set<TelefonskiBroj>() {};
         return temp;
-    }
-
-    public Set<TelefonskiBroj> izGradaBrojevi(Grad g){
-        Set<TelefonskiBroj> temp;
-    }
-
+    }*/
 }
