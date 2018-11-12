@@ -1,44 +1,56 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-enum Grad {
-    SARAJEVO("033"),
-    TUZLA("035"),
-    ZENICA("032"),
-    BRCKO("049"),
-    TRAVNIK("030"),
-    ORASJE("031"),
-    LIVNO("034"),
-    MOSTAR("036"),
-    BIHAC("037"),
-    GORAZDE("038"),
-    SIROKIBRIJEG("039");
+import java.util.HashMap;
 
-    private final String pozivni;
-    private Grad(String s){
-        pozivni = s;
-    }
-
-    public String toString() {
-        return this.pozivni;
-    }
-}
-
-public class FiksniBroj extends TelefonskiBroj {
-    private Grad grad;
+public class FiksniBroj extends TelefonskiBroj{
     private String broj;
-
-    public FiksniBroj(Grad grad, String broj) {
-        this.grad = grad;
-        this.broj = broj;
+    private Grad mjesto;
+    public enum Grad {SARAJEVO, TUZLA, ZENICA, BIHAC, ORASJE, GORAZDE, TRAVNIK, MOSTAR, SIROKIBRIJEG, LIVNO, BRCKO}
+    private static HashMap<Grad, String> vrijednost = new HashMap<>();
+    static {
+        vrijednost.put(Grad.SARAJEVO, "033");
+        vrijednost.put(Grad.TUZLA, "035");
+        vrijednost.put(Grad.ZENICA, "032");
+        vrijednost.put(Grad.BIHAC, "037");
+        vrijednost.put(Grad.ORASJE, "031");
+        vrijednost.put(Grad.GORAZDE, "038");
+        vrijednost.put(Grad.TRAVNIK, "030");
+        vrijednost.put(Grad.MOSTAR, "036");
+        vrijednost.put(Grad.SIROKIBRIJEG, "039");
+        vrijednost.put(Grad.LIVNO, "034");
+        vrijednost.put(Grad.BRCKO, "049");
     }
 
-    @Override public String ispisi(){
-        String temp = new String();
-        temp = grad.toString() + "/" + broj;
-        return temp;
-    }
-    @Override public int hashCode(){
-        return this.hashCode();
+    public String getBroj() {
+        return broj;
     }
 
+    public Grad getMjesto() {
+        return mjesto;
+    }
+
+    public static HashMap<Grad, String> getVrijednost() {
+        return vrijednost;
+    }
+
+    public int compareTo(Object o){
+        return this.broj.compareTo(((FiksniBroj) o).broj);
+    }
+
+    FiksniBroj(Grad grad, String broj1){
+        mjesto = grad;
+        this.broj = broj1;
+
+    }
+    public String ispisi(){
+        String s = new String();
+        s += vrijednost.get(mjesto);
+        s += "/";
+        s += broj;
+        return s;
+    }
+
+    public int hashCode(){
+        return 0;
+    }
 }

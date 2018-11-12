@@ -4,18 +4,26 @@ public class MobilniBroj extends TelefonskiBroj {
     private int mobilnaMreza;
     private String broj;
 
-    @Override public String ispisi(){
-        String temp = new String();
-        temp = "0" + mobilnaMreza + "/" + broj;
-        return temp;
+    MobilniBroj(int mobilnaMreza1, String broj1){
+        this.mobilnaMreza = mobilnaMreza1;
+        this.broj = broj1;
     }
 
-    public MobilniBroj(int mobilnaMreza, String broj) {
-        this.mobilnaMreza = mobilnaMreza;
-        this.broj = broj;
+    public int compareTo(Object o){
+        MobilniBroj mb = (MobilniBroj) o;
+        return this.broj.compareTo(mb.broj);
     }
 
-    @Override public int hashCode(){
-        return this.hashCode();
+    public String ispisi(){
+        String s = new String();
+        s += "0";
+        s += String.valueOf(mobilnaMreza);
+        s += "/";
+        s += broj;
+        return s;
+    }
+
+    public int hashCode(){
+        return 0;
     }
 }

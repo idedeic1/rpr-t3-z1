@@ -1,19 +1,26 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-public class MedunarodniBroj extends TelefonskiBroj {
-    private String broj;
-    private String drzava;
+public class MedunarodniBroj extends TelefonskiBroj{
+    private String drzava, broj;
 
-    public MedunarodniBroj(String broj, String drzava) {
-        this.broj = broj;
-        this.drzava = drzava;
+    MedunarodniBroj(String drzava1, String broj1){
+        this.drzava = drzava1;
+        this.broj = broj1;
     }
-    @Override public String ispisi(){
-        String temp = new String();
-        temp = drzava + broj;
-        return temp;
+
+    public int compareTo(Object o){
+        return this.broj.compareTo(((MedunarodniBroj) o).broj);
     }
-    @Override public int hashCode(){
-        return this.hashCode();
+
+    public String ispisi(){
+        String s = new String();
+        s += drzava;
+        s += broj;
+
+        return s;
+    }
+
+    public int hashCode(){
+        return 0;
     }
 }
