@@ -1,11 +1,15 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
 import org.junit.jupiter.api.Test;
-enum Grad {SARAJEVO, TUZLA, ZENICA, BRCKO, TRAVNIK, ORASJE, LIVNO, MOSTAR, BIHAC, GORAZDE, SIROKIBRIJEG}
 
 import java.util.Set;
-import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad.*;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad.SARAJEVO;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+enum Grad {SARAJEVO, TUZLA, ZENICA, BRCKO, TRAVNIK, ORASJE, LIVNO, MOSTAR, BIHAC, GORAZDE, SIROKIBRIJEG}
+
+
 
 class ImenikTest {
 
